@@ -1,5 +1,7 @@
 package com.spring.aop;
 
+import java.util.Scanner;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -10,7 +12,11 @@ public class App {
 		
 		Student std = ctx.getBean("student", Student.class);
 		
-		System.out.println("Student is : "+std.result(40));
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter your marks : ");
+		int marks = sc.nextInt();
+		
+		std.result(marks);
 	}
 }
 
